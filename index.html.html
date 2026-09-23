@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linha do Tempo Profissional - Luanny Lima Gadelha</title>
+    <!-- Importação de fonte profissional do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="slide-container">
+        
+        <!-- Lado Esquerdo: Perfil da Personalidade -->
+        <div class="left-column">
+            <img src="https://media.licdn.com/dms/image/v2/D4D35AQGqbO8YTWiCCg/profile-framedphoto-shrink_400_400/B4DZ2TYPsBHYAc-/0/1776294100009?e=1790787600&v=beta&t=rZf5ZT1wKDKM3b2_dy_MemncAKjbJUDrhrhzQWp4QZo" alt="Foto de Luanny Lima Gadelha" class="profile-img">
+            <div class="profile-info">
+                <h1>Luanny Lima Gadelha</h1>
+                <p>Desenvolvedora de IA</p>
+                <span class="badge">Tech Portfolio</span>
+            </div>
+        </div>
+
+        <!-- Lado Direito: Linha do Tempo Interativa -->
+        <div class="right-column">
+            
+            <div class="timeline-item" onclick="toggleDetails(this)">
+                <div class="timeline-visual">
+                    <div class="node"></div>
+                    <div class="arrow-down"></div>
+                </div>
+                <div class="timeline-content">
+                    <h2>Formação em Desenvolvimento Web</h2>
+                    <p class="subtitle">Digital College • Projeto Geração Tech 2.0</p>
+                    <div class="details">
+                        <p>Capacitação em desenvolvimento Fullstack, estruturação de aplicações web modernas, lógica de programação e autonomia técnica na criação de interfaces e sistemas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="toggleDetails(this)">
+                <div class="timeline-visual">
+                    <div class="node"></div>
+                    <div class="arrow-down"></div>
+                </div>
+                <div class="timeline-content">
+                    <h2>DevFest (2022)</h2>
+                    <p class="subtitle">Encontro de Tecnologia • Digital College</p>
+                    <div class="details">
+                        <p>Desenvolvimento e publicação de um repositório interativo com integração de API para monitoramento da temperatura de qualquer cidade em tempo real.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" onclick="toggleDetails(this)">
+                <div class="timeline-visual">
+                    <div class="node"></div>
+                    <div class="arrow-down"></div>
+                </div>
+                <div class="timeline-content">
+                    <h2>Curso de Análise de Dados</h2>
+                    <p class="subtitle">Digital College • Projeto Leão Tech 2.0</p>
+                    <div class="details">
+                        <p>Tratamento, limpeza e interpretação de dados estruturados, gerando relatórios dinâmicos e insights acionáveis para a tomada de decisões.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item active-item" onclick="toggleDetails(this)">
+                <div class="timeline-visual">
+                    <div class="node active"></div>
+                    <div class="arrow-down"></div>
+                </div>
+                <div class="timeline-content">
+                    <h2 class="active-title">Curso de IA Generativa</h2>
+                    <p class="active-subtitle">Digital College</p>
+                    <div class="details show-details">
+                        <p>Criação e implementação de Agentes de Inteligência Artificial voltados para automação de processos, processamento de linguagem natural e integração com modelos de linguagem avançados.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script de Interatividade -->
+    <script>
+        function toggleDetails(element) {
+            const allItems = document.querySelectorAll('.timeline-item');
+            allItems.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('expanded');
+                }
+            });
+            element.classList.toggle('expanded');
+        }
+    </script>
+
+</body>
+</html>

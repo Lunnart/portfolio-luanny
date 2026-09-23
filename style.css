@@ -1,0 +1,203 @@
+/* Reset básico e tipografia profissional */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f7fa;
+    color: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Principal estilo Card/Slide */
+.slide-container {
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(11, 25, 44, 0.08);
+    overflow: hidden;
+}
+
+/* Lado Esquerdo - Perfil */
+.left-column {
+    background: linear-gradient(135deg, #0b192c 0%, #1e3e62 100%);
+    color: #ffffff;
+    width: 35%;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.profile-info p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Lado Direito - Linha do Tempo */
+.right-column {
+    width: 65%;
+    padding: 40px;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Elementos Visuais da Linha do Tempo */
+.timeline-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.node {
+    width: 14px;
+    height: 14px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 2px #cbd5e1;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.node.active, .timeline-item:hover .node {
+    background-color: #1e3e62;
+    box-shadow: 0 0 0 3px rgba(30, 62, 98, 0.2);
+}
+
+.arrow-down {
+    width: 2px;
+    background-color: #e2e8f0;
+    flex-grow: 1;
+    margin-top: 4px;
+}
+
+.timeline-item:last-child .arrow-down {
+    display: none;
+}
+
+/* Conteúdo da Timeline */
+.timeline-content {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 16px 20px;
+    border-radius: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: #94a3b8;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(11, 25, 44, 0.04);
+}
+
+.timeline-content h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0b192c;
+    margin-bottom: 4px;
+}
+
+.timeline-content .subtitle, .active-subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+/* Seção de Detalhes (Acordeão) */
+.details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* Expandido via Clique ou Estado Ativo */
+.timeline-item.expanded .details,
+.details.show-details {
+    max-height: 150px;
+    opacity: 1;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.timeline-item.expanded .timeline-content {
+    border-color: #1e3e62;
+    background: #ffffff;
+}
+
+/* Responsividade para Dispositivos Móveis */
+@media (max-width: 768px) {
+    .slide-container {
+        flex-direction: column;
+    }
+    
+    .left-column, .right-column {
+        width: 100%;
+    }
+
+    .left-column {
+        padding: 30px 20px;
+    }
+}
